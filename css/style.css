@@ -1,0 +1,27 @@
+/*disp pequeños*/
+@media all and (max-width: 767px) {
+  #btn-mostrarDatos {
+    margin-bottom: 1rem;
+  }
+
+  #btn-esMayorDeEdad {
+    margin-top: 0.6rem;
+    margin-bottom: 0.6rem;
+  }
+}
+
+/*disp medianos*/
+@media all and (min-width: 768px) and (max-width: 991px) {
+  #btn-esMayorDeEdad {
+    margin-left: 0.6rem;
+    margin-right: 0.6rem;
+  }
+}
+
+/*disp grandes*/
+@media all and (min-width: 992px) {
+  #btn-esMayorDeEdad {
+    margin-left: 0.6rem;
+    margin-right: 0.6rem;
+  }
+}
