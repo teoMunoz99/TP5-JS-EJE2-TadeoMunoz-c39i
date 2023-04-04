@@ -1,3 +1,7 @@
+body{
+    background: whitesmoke;
+}
+
 /*disp pequeños*/
 @media all and (max-width: 767px) {
   #btn-mostrarDatos {
