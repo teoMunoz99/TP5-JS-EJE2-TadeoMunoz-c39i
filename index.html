@@ -33,12 +33,12 @@
     </header>
     <main>
       <section class="container">
-        <form action="">
+        <form action="" id="formulario">
           <div class="form-floating mb-3">
             <input
               type="text"
               class="form-control"
-              id="floatingInputNombre"
+              id="inputNombre"
               placeholder="Tadeo"
               minlength="3"
               maxlength="10"
@@ -50,7 +50,7 @@
             <input
               type="number"
               class="form-control"
-              id="floatingInputEdad"
+              id="inputEdad"
               placeholder="23"
               required
             />
@@ -60,7 +60,7 @@
             <input
               type="number"
               class="form-control"
-              id="floatingInputEdad"
+              id="inputDni"
               placeholder="41870581"
               required
             />
@@ -70,7 +70,7 @@
             <input
               type="text"
               class="form-control"
-              id="floatingInputEdad"
+              id="inputSexo"
               placeholder="Masculino"
               minlength="5"
               maxlength="10"
@@ -82,7 +82,7 @@
             <input
               type="number"
               class="form-control"
-              id="floatingInputEdad"
+              id="inputPeso"
               placeholder="75"
               required
             />
@@ -92,7 +92,7 @@
             <input
               type="number"
               class="form-control"
-              id="floatingInputEdad"
+              id="inputAltura"
               placeholder="180"
               required
             />
@@ -102,13 +102,15 @@
             <input
               type="number"
               class="form-control"
-              id="floatingInputEdad"
+              id="inputAnioNacimiento"
               placeholder="1999"
               required
             />
             <label for="floatingInput">Año de nacimiento</label>
           </div>
-          <button type="submit" class="btn btn-primary">Descubrir!</button>
+          <button type="submit" class="btn btn-primary" id="btn-cargarDatos">Cargar Datos</button>
+          <button type="button" class="btn btn-primary" id="btn-mostrarGeneracion">Mostrar generacion!</button>
+          <button type="button" class="btn btn-primary" id="btn-mostrarMayorEdad">Mayor de edad</button>
         </form>
       </section>
     </main>

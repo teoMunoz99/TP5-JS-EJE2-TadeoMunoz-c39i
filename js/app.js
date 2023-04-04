@@ -1,37 +1,3 @@
-//Funciones
-function asignarGeneracion(anio) {
-
-    if (anio >= 1930 && anio <= 1948) {
-        document.write(`
-                <p>Pertenece a la generacion: Silent Generation</p>
-                <p>Rasgo característico: Austeridad</p>
-            `)
-    } else if (anio >= 1949 && anio <= 1968) {
-        document.write(`
-                <p>Pertenece a la generacion: Baby Boom</p>
-                <p>Rasgo característico: Ambición</p>
-            `)
-    } else if (anio >= 1969 && anio <= 1980) {
-        document.write(`
-                <p>Pertenece a la generacion: Generacion X</p>
-                <p>Rasgo característico: Obsesión por el éxito</p>
-            `)
-    } else if (anio >= 1981 && anio <= 1993) {
-        document.write(`
-                <p>Pertenece a la generacion: Generacion Y (Millenials)</p>
-                <p>Rasgo característico: Frustración</p>
-            `)
-    } else if (anio >= 1994 && anio <= 2010) {
-        document.write(`
-                <p>Pertenece a la generacion: Generacion Z</p>
-                <p>Rasgo característico: Irreverencia</p>
-            `)
-    }else {
-        document.write(`Todavía no pertenece a una generación`);
-    } 
-    
-}
-
 //Clases
 class Persona {
     //declaro las propiedades privadas
@@ -107,20 +73,47 @@ class Persona {
     //Metodos
 
     mostrarGeneracion() {
-        return asignarGeneracion(this.anioNacimiento);
+        if (this.anioNacimiento >= 1930 && this.anioNacimiento <= 1948) {
+            alert(`
+                    <p>Pertenece a la generacion: Silent Generation</p>
+                    <p>Rasgo característico: Austeridad</p>
+                `);
+        } else if (this.anioNacimiento >= 1949 && this.anioNacimiento <= 1968) {
+            alert(`
+                    <p>Pertenece a la generacion: Baby Boom</p>
+                    <p>Rasgo característico: Ambición</p>
+                `)
+        } else if (this.anioNacimiento >= 1969 && this.anioNacimiento <= 1980) {
+            alert(`
+                    <p>Pertenece a la generacion: Generacion X</p>
+                    <p>Rasgo característico: Obsesión por el éxito</p>
+                `)
+        } else if (this.anioNacimiento >= 1981 && this.anioNacimiento <= 1993) {
+            alert(`
+                    <p>Pertenece a la generacion: Generacion Y (Millenials)</p>
+                    <p>Rasgo característico: Frustración</p>
+                `)
+        } else if (this.anioNacimiento >= 1994 && this.anioNacimiento <= 2010) {
+            alert(`
+                    <p>Pertenece a la generacion: Generacion Z</p>
+                    <p>Rasgo característico: Irreverencia</p>
+                `)
+        }else {
+            alert(`Todavía no pertenece a una generación`);
+        } 
     }
 
     esMayorDeEdad() {
 
         if (this.edad >= 18) {
-            document.write(`Es mayor de edad`);
+            alert(`Es mayor de edad`);
         } else {
-            document.write(`Es menor de edad`);
+            alert(`Es menor de edad`);
         }
     }
 
     mostrarDatos(){
-        document.write(`
+        console.log(`
         <ul>
             <li>Nombre: ${this.nombre}</li>
             <li>Edad: ${this.edad}</li>
@@ -129,11 +122,88 @@ class Persona {
             <li>Peso : ${this.peso}</li>
             <li>Altura : ${this.altura}</li>
             <li>Año de nacimiento : ${this.anioNacimiento}</li>
-        </ul>
-        `)
+        </ul>`)
     }
 }
 
-//traigo datos del formulario a la variable llamada formulario 
+//Creo una sola vez un objeto persona para luego guardar o reemplazar ahi los datos ingredos
+let datos = new Persona('nombre','edad','dni','sexo','peso','altura','año de nacimiento');
 
-let formulario = document.getElementById('');
+//Funciones
+
+//creo que esta no la necesito al final
+function asignarGeneracion(anio) {
+
+    if (anio >= 1930 && anio <= 1948) {
+        alert(`
+                <p>Pertenece a la generacion: Silent Generation</p>
+                <p>Rasgo característico: Austeridad</p>
+            `);
+    } else if (anio >= 1949 && anio <= 1968) {
+        alert(`
+                <p>Pertenece a la generacion: Baby Boom</p>
+                <p>Rasgo característico: Ambición</p>
+            `)
+    } else if (anio >= 1969 && anio <= 1980) {
+        alert(`
+                <p>Pertenece a la generacion: Generacion X</p>
+                <p>Rasgo característico: Obsesión por el éxito</p>
+            `)
+    } else if (anio >= 1981 && anio <= 1993) {
+        alert(`
+                <p>Pertenece a la generacion: Generacion Y (Millenials)</p>
+                <p>Rasgo característico: Frustración</p>
+            `)
+    } else if (anio >= 1994 && anio <= 2010) {
+        alert(`
+                <p>Pertenece a la generacion: Generacion Z</p>
+                <p>Rasgo característico: Irreverencia</p>
+            `)
+    }else {
+        alert(`Todavía no pertenece a una generación`);
+    } 
+    
+}
+
+//con esta funcion guardo los datos que llegan del input
+function guardarDatos(e){
+    e.preventDefault();
+    datos.nombre = document.getElementById('inputNombre').value;
+    console.log(datos.nombre);
+    datos.edad = document.getElementById('inputEdad').value;
+    console.log(datos.edad);
+    datos.dni = document.getElementById('inputDni').value;
+    console.log(datos.dni);
+    datos.sexo = document.getElementById('inputSexo').value;
+    console.log(datos.sexo);
+    datos.peso = document.getElementById('inputPeso').value;
+    console.log(datos.peso);
+    datos.altura = document.getElementById('inputAltura').value;
+    console.log(datos.altura);
+    datos.anioNacimiento = document.getElementById('inputAnioNacimiento').value;
+    console.log(datos.anioNacimiento);
+}
+
+function mostrarGen(){
+    alert(datos.mostrarGeneracion());
+}
+
+function mayorEdad(){
+    alert(datos.esMayorDeEdad());
+}
+
+//=======Creo que en esta parte tengo el problema==============//
+//tendria que poner como un boton que sea para comenzar y desaparezca guardando los datos
+//despues que aparezcan los otros 2 mostrargen y mayoredad
+
+//traigo datos del formulario a la variable llamada formulario 
+let formulario = document.getElementById('formulario');
+
+//Agrego manejador de eventos
+formulario.addEventListener('submit', guardarDatos);
+
+let btnGeneracion = document.getElementById('btn-cargarDatos');
+btnGeneracion.addEventListener('click', mostrarGen);
+
+let btnEdad = document.getElementById('btn-cargarDatos');
+btnEdad.addEventListener('click', mayorEdad);
