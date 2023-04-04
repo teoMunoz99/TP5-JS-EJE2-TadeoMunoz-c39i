@@ -32,6 +32,7 @@ function asignarGeneracion(anio) {
     
 }
 
+//Clases
 class Persona {
     //declaro las propiedades privadas
     #nombre;
@@ -133,3 +134,6 @@ class Persona {
     }
 }
 
+//traigo datos del formulario a la variable llamada formulario 
+
+let formulario = document.getElementById('');
