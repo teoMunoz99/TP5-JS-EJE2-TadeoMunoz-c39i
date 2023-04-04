@@ -106,16 +106,30 @@ class Persona {
     //Metodos
 
     mostrarGeneracion() {
-        return asignarGeneracion(this.Persona.anioNacimiento);
+        return asignarGeneracion(this.anioNacimiento);
     }
 
     esMayorDeEdad() {
 
-        if (this.Persona.edad >= 18) {
+        if (this.edad >= 18) {
             document.write(`Es mayor de edad`);
         } else {
             document.write(`Es menor de edad`);
         }
     }
 
+    mostrarDatos(){
+        document.write(`
+        <ul>
+            <li>Nombre: ${this.nombre}</li>
+            <li>Edad: ${this.edad}</li>
+            <li>Dni : ${this.dni}</li>
+            <li>Sexo : ${this.sexo}</li>
+            <li>Peso : ${this.peso}</li>
+            <li>Altura : ${this.altura}</li>
+            <li>Año de nacimiento : ${this.anioNacimiento}</li>
+        </ul>
+        `)
+    }
 }
+
